@@ -1,0 +1,15 @@
+@ImportManager_HostAddress = http://localhost:5192
+
+POST {{ImportManager_HostAddress}}/import/
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="customers.csv"
+Content-Type: text/csv
+
+< ./customers.csv
+--boundary
+
+###
+
+GET {{ImportManager_HostAddress}}/import/16e8d11e-1fb0-4e6a-82ce-e948cf985ea8
